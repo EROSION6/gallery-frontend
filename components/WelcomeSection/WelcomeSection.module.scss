@@ -1,0 +1,150 @@
+.welcome {
+	display: flex;
+	flex-direction: column;
+	gap: 150px;
+	text-align: center;
+	padding: 0 10px;
+
+	h1 {
+		font-family: 'Roslindale', sans-serif;
+		color: rgb(203, 205, 211);
+		z-index: 2;
+		text-transform: none;
+		margin-bottom: 0;
+		padding-top: 128px;
+		padding-bottom: 32px;
+		position: sticky;
+		top: 128px;
+		--minFontSize: 98px;
+		--maxFontSize: 108px;
+		--scaler: 10vw;
+		font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+	}
+
+	.imageBg {
+		position: relative;
+		z-index: 1;
+		object-fit: cover;
+		border-radius: 32px;
+		width: 100%;
+		height: 140vh;
+		margin-top: 170px;
+		position: relative;
+		overflow: hidden;
+		background-image: url('https://cdn.prod.website-files.com/60eeb025115a75902b86a796/61ead96e36ad746bb2144a76_Inspired%20By%20Iceland%20-%20Header-p-2000.jpeg');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		.waves {
+			width: 100%;
+			height: 140vh;
+			border-radius: 32px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 3;
+		}
+	}
+
+	.descr_content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		.date {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 24px;
+			margin-bottom: 64px;
+
+			span {
+				color: #f3f6fa;
+				font-family: 'Mint Grotesk Trial Extra Bold';
+				font-weight: 500;
+				text-transform: uppercase;
+				font-size: 0.8em;
+				line-height: 1.3;
+			}
+		}
+
+		p {
+			color: #f3f6fa;
+			font-family: 'Roslindale', sans-serif;
+			font-size: 1.72em;
+			font-weight: 400;
+			line-height: 1.1;
+			width: 50rem;
+			transition: opacity 0.5s ease-in-out;
+		}
+	}
+
+	@media (max-width: 1280px) {
+		padding: 0 20px;
+	}
+
+	@media (max-width: 1024px) {
+		gap: 50px;
+		h1 {
+			--minFontSize: 70px;
+			--maxFontSize: 70px;
+		}
+
+		.imageBg {
+			height: 100vh;
+			.waves {
+				height: 100vh;
+			}
+		}
+
+		.descr_content {
+			p {
+				width: 100%;
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			--minFontSize: 55px;
+			--maxFontSize: 55px;
+			padding-top: 40px;
+		}
+
+		.imageBg {
+			height: 80vh;
+			.waves {
+				height: 80vh;
+			}
+		}
+
+		.descr_content {
+			p {
+				font-size: 1.3em;
+			}
+		}
+	}
+
+	@media (max-width: 425px) {
+		h1 {
+			--minFontSize: 27px;
+			--maxFontSize: 35px;
+			padding-top: 20px;
+		}
+
+		.imageBg {
+			height: 55vh;
+			.waves {
+				height: 55vh;
+			}
+		}
+
+		.descr_content {
+			p {
+				font-size: 1em;
+			}
+		}
+	}
+}
