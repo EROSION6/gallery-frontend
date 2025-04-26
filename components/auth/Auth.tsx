@@ -43,13 +43,13 @@ export const Auth = ({
 			if (activeTab === 'Register') {
 				const data = await AuthService.register(user)
 				if (data?.token) {
-					saveTokenLocalStorage(data.token)
+					saveTokenLocalStorage('token', data.token)
 					setActiveTab('Login')
 				}
 			} else {
 				const data = await AuthService.login(user)
 				if (data?.token) {
-					saveTokenLocalStorage(data.token)
+					saveTokenLocalStorage('token', data.token)
 					setIsOpen(false)
 				}
 			}
@@ -119,11 +119,7 @@ export const Auth = ({
 						/>
 					)}
 
-					<button
-						type='submit'
-						className={s.submitButton}
-						disabled={!isValid}
-					>
+					<button type='submit' className={s.submitButton} disabled={!isValid}>
 						{activeTab}
 					</button>
 				</form>
